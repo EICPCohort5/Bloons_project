@@ -1,7 +1,7 @@
 let config = {
     userName: 'root',
     password: 'root',
-    database: 'gamesDB',
+    database: 'gameDB',
 };
 
 module.exports = config;
