@@ -3,19 +3,24 @@ body {
   padding: 200px;
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(220deg, rgba(127, 90, 131, 0.52), rgba(13, 50, 77, 0.73)), url('../images/bg.jpg');
+  background-image: linear-gradient(
+      220deg,
+      rgba(127, 90, 131, 0.52),
+      rgba(13, 50, 77, 0.73)
+    ),
+    url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 /* Special Background for Home Page (upon request from Chris) */
-#specialbg{
+/* #specialbg{
   background-image: linear-gradient(220deg, rgba(127, 90, 131, 0.52), rgba(13, 50, 77, 0.73)), url('../images/bg2.gif');
   background-position: top;
-}
+} */
 
 /* Adding space above "Home", "List Games", "Add a Game", "Edit a Game" buttons */
-.row{
+.row {
   margin-top: 3vh;
 }
 
@@ -27,17 +32,17 @@ a {
   border-radius: 15px;
   text-decoration: none;
 }
-a.active{
+a.active {
   background-color: rgba(13, 50, 77, 1);
   color: #fff;
 }
-a:hover{
+a:hover {
   color: rgba(13, 50, 77, 1);
 }
-a.active:hover{
+a.active:hover {
   color: #fff;
 }
-nav{
+nav {
   color: white;
   text-align: center;
 }
@@ -47,23 +52,23 @@ header {
   text-align: center;
   color: #fff;
 }
-header h1{
+header h1 {
   filter: drop-shadow(1px 1px 1px #000);
   font-weight: 800;
   font-size: 4rem;
 }
 
 /* Add a Game Page */
-form{
+form {
   width: 50%;
   margin: auto;
 }
 
 /* List Games Page */
-.table{
+.table {
   background-color: white;
   width: 50%;
   margin: auto;
   box-shadow: 5px 5px 10px black;
-  text-align:center;
+  text-align: center;
 }
