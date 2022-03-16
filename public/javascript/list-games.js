@@ -24,9 +24,7 @@ function renderTable(games) {
         row.insertAdjacentHTML(
         `beforeend`,
         `
-        <td>${game.title}</td>
-        <td>${game.publisher}</td>
-        <td>${game.platform}</td>
+        <td>${game}</td>
         `
         );
         rows.push(row);
