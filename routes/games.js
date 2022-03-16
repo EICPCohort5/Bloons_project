@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', (res, req) => {
-    //const games = ['Kingdom Hearts', 'Halo', 'Civilization'];
-    res.render('games', { title: 'Express' });
+router.get('/', (req, res) => {
+    const games = ['Kingdom Hearts', 'Halo', 'Civilization'];
+    res.json(games);
 });
 
 module.exports = router;
