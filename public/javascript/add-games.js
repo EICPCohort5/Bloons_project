@@ -9,6 +9,7 @@ form.addEventListener('submit', (event) => { //Event listener that will run when
     let gameFormData = new FormData(form); //Get form input data 
     let game = {};
     for (let [key, value] of gameFormData.entries()) {
+        console.log(key, value);
         game[key] = value; //// Get  form input data into Game object via key/value pairs for each attribute
     }
 

@@ -1,18 +1,21 @@
 var express = require('express');
 var router = express.Router();
-const { Games } = require('../orm/models');
+const { Games, Platform, Publisher, GamesPlatforms } = require('../orm/models');
 
-// GET /books/ -> [ array of books ]
+// GET /games
 router.get('/', async (req, res) => {
   try {
-    let games = await Games.findAll();
+    let games = await Games.findAll(
+      {include: {model: Publisher, as: 'publisher'}}
+    );
     res.json(games);
   } catch (error) {
+    console.error(error);
     res.status(500).send('Game fetching failed');
   }
 });
 
-// GET /books/:id -> matching book or 404
+// GET /games/:id -> matching game or 404
 router.get('/:id', async (req, res) => {
   try {
     let game = await Games.findByPk(req.params.id);
