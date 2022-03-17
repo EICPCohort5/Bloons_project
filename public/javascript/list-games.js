@@ -20,6 +20,7 @@ function renderTable(games) {
     let tableBody = document.querySelector('#games-container tbody'); // Get table from HTML 
     let rows = [];
     for (let game of games) { // Iterate through the games list, displaying each game and its attributes in the table
+        console.log('hello');
         let row = document.createElement('tr');
         row.insertAdjacentHTML(
         `beforeend`,
