@@ -1,4 +1,4 @@
-import { restServer } from './config.js';
+import { restServer } from './config.js'; // localhost:3000/games --> connected to DB
 
 let form = document.querySelector('#add-game-form'); // Get add-game form from HTML
 
@@ -24,16 +24,6 @@ form.addEventListener('submit', (event) => { //Event listener that will run when
             console.log('Bad response? ', response);
         }
     })
-    .then((results) => { // Make a notification popup to confirm the new game has been added successfully
-        console.log(`Added game with id ${results.id}`);
-        let notifyElement = document.querySelector('#notifications');
-        let message = document.createElement('p');
-        message.classList.add('notification-fade');
-        message.textContent = `Added game with id ${results.id}`;
-        notifyElement.replaceChildren(message);
-        setTimeout(() => message.classList.add('hidden'), 500);
-        submitButton.disabled = false;
-    });
 });
 
     export {};
