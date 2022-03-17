@@ -25,7 +25,7 @@ function renderTable(games) {
         row.insertAdjacentHTML(
         `beforeend`,
         `
-        <td>${game}</td>
+        <td>${game.gameName}</td>
         `
         );
         rows.push(row);
