@@ -13,6 +13,7 @@ const Publisher = connection.define(
     publisherName: { type: DataTypes.STRING, allowNull: false },
   },
   {
+    freezeTableName: true,
     underscored: true,
     timestamps: false,
   }
@@ -52,6 +53,15 @@ const Games = connection.define(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      gamePublisherId: {
+        field: 'game_publisher_id',
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: Publisher,
+          key: 'publisherId',
+        }
+      }
     },
     { tableName: 'games', timestamps: false }
   );
@@ -88,10 +98,20 @@ const GamesPlatforms = connection.define(
   }
 );
 
+Games.belongsTo(Publisher, {
+  foreignKey: 'gamePublisherId',
+  as: 'publisher',
+})
+Publisher.hasMany(Games, {
+  foreignKey: 'gamePublisherId',
+  as: 'publisher',
+})
+
 Games.belongsToMany(Platform, {
   through: { model: GamesPlatforms },
   foreignKey: 'gameId',
 });
+
 /*Platform.belongsToMany(Games, {
   through: { model: GamesPlatforms },
   foreignKey: 'platformId',

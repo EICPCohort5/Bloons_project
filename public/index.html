@@ -9,7 +9,7 @@
 <body id="specialbg">
   <main class="container">
     <header>
-      <h1>Arcade</h1>
+      <h1>Rick Astley Arcade</h1>
       <p>Welcome!</p>
     </header>
     <nav class="row">
@@ -18,10 +18,16 @@
           <li class="list-inline-item"><a href="#" class="active">Home</a></li>
           <li class="list-inline-item"><a href="list-games.html">List Games</a></li>
           <li class="list-inline-item"><a href="add-games.html">Add a Game</a></li>
-          <li class="list-inline-item"><a href="edit-games.html">Edit a Game</a></li>
         </ul>
       </div>
     </nav>
+    <div id="audio">
+      <button id='clickme' onclick="document.getElementById('player').play()">CLICK ME!</button>
+      <audio controls autoplay id="player">
+        <source src="ra.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   </main>
 </body>
 

@@ -1,6 +1,6 @@
 let config = {
     userName: 'root',
-    password: 'root',
+    password: 'root1234',
     database: 'gameDB',
 };
 
